@@ -29,6 +29,9 @@ class GetApiController {
 
     @GetMapping("/map")
     fun queryParamMap(@RequestParam map: Map<String, Any>): Map<String, Any> {
+        if (map.containsKey("phone-number")) {
+            println(map["phone-number"])
+        }
         return map
     }
 }
