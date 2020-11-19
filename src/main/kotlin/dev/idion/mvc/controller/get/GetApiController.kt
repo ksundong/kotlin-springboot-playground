@@ -1,5 +1,6 @@
 package dev.idion.mvc.controller.get
 
+import dev.idion.mvc.model.http.UserRequest
 import org.springframework.web.bind.annotation.*
 
 @RequestMapping("/api")
@@ -19,5 +20,10 @@ class GetApiController {
     @GetMapping("/hi")
     fun queryParam(@RequestParam key: String): String {
         return "key: $key"
+    }
+
+    @GetMapping("/object")
+    fun queryParamObject(userRequest: UserRequest): UserRequest {
+        return userRequest
     }
 }
