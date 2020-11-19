@@ -1,9 +1,6 @@
 package dev.idion.mvc.controller.get
 
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RequestMapping("/api")
 @RestController
@@ -17,5 +14,10 @@ class GetApiController {
     @GetMapping("/hello/{name}")
     fun helloName(@PathVariable name: String): String {
         return "hello $name"
+    }
+
+    @GetMapping("/hi")
+    fun queryParam(@RequestParam key: String): String {
+        return "key: $key"
     }
 }
