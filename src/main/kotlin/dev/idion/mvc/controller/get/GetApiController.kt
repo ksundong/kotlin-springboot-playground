@@ -26,4 +26,9 @@ class GetApiController {
     fun queryParamObject(userRequest: UserRequest): UserRequest {
         return userRequest
     }
+
+    @GetMapping("/map")
+    fun queryParamMap(@RequestParam map: Map<String, Any>): Map<String, Any> {
+        return map
+    }
 }
